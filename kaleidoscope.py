@@ -33,11 +33,11 @@ def collision(other_centers, other_sizes, center, size):
 
 def rotate_coordinates(x, y, angle_deg):
     """
-    Rotates
-    :param x:
-    :param y:
+    Rotates 2DIM coordinates by "angle_deg" degree
+    :param x: The x-coordinate
+    :param y: The y-coordinate
     :param angle_deg: The angle of rotation in degree
-    :return:
+    :return: The rotated x and y coordinates
     """
     angle_rad = np.radians(angle_deg)
     new_x = x * np.cos(angle_rad) - y * np.sin(angle_rad)
@@ -66,10 +66,10 @@ def generate_kaleidoscope():
         center = (np.random.randint(-100, 100), np.random.randint(-100, 100))
         size = np.random.randint(10, 40)
         success = False
-        for trys in range(1000):  # Versuche die Schneeflocke zu platzieren
+        for trys in range(1000):  # Try to place snowflake
             if collision(used_centers, used_sizes, center, size):
                 center = (np.random.randint(-100, 100), np.random.randint(-100, 100))
-                if trys % 100 == 0:
+                if trys % 50 == 0:
                     size = np.random.randint(4, 40 - trys * 0.035)
             else:
                 new_snowflake = koch_snowflake(center=center, degree=np.random.randint(1, 5), s=size)
@@ -83,15 +83,6 @@ def generate_kaleidoscope():
         if not success:
             print("Not all snowflakes fit the screen! Drawn " + str(successfully_drawn) + " snowflakes.")
             break
-
-    for i, snowflake in enumerate(snowflakes):
-        # extract the line coordinates
-        x, y = np.empty(len(snowflake) * 5), np.empty(len(snowflake) * 5)
-        for b, line in enumerate(snowflake):
-            x[b * 5:b * 5 + 5] = [line['a'][0], line['b'][0], line['c'][0], line['d'][0], line['e'][0]]
-            y[b * 5:b * 5 + 5] = [line['a'][1], line['b'][1], line['c'][1], line['d'][1], line['e'][1]]
-
-        ax.fill(x, y, color=snowflake_colors[i])
 
     return tuple()
 

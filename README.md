@@ -13,6 +13,7 @@
 *REQUIREMENTS*
 - Installation of matplotlib
 - Installation of numpy
+- Installation of MovieWriter or Pillow (should be preinstalled when using matplotlib)
 
 *INSTRUCTIONS*
 - Run the programm by executing kaleidoscope.py

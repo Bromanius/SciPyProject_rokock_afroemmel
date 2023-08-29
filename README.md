@@ -24,7 +24,8 @@
   - Number of snowflakes: How many koch snowflakes should spawn. If the amount doesn't fit the screen then the most possible amount of snowflakes will be spawned.
   - Colors: What colors should be possible for the snowflakes. Seperate with comma. (e.g.: red,green,blue,yellow)
   - Rotate: If the kaleidoscope should rotate or not.
-  - Changing Colors: If the kaleidoscope should change colors or not.
-  - Change_speed: How fast the kaleidoscope should change colors and rotate. (100 means that 1 frame lasts 100ms)
+  - Changing colors: If the kaleidoscope should change colors or not.
+  - Change speed: How fast the kaleidoscope should change colors and rotate. (100 means that 1 frame lasts 100ms)
+  - Frame count = The amount of frames for the gif. 30 yields in a perfect loop but takes up to 1 minute to generate. 10 is recommended.
 
 ***Project for the SciPy-Course by rokock and afroemmel.***

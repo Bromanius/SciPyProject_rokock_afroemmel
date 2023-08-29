@@ -131,13 +131,15 @@ if __name__ == "__main__":
     rotate = input("Rotate kaleidoscope? (yes/no): ").lower() == "yes"
     changing_colors = input("Should the kaleidoscope change colors? (yes/no): ").lower() == "yes"
     change_speed = float(input("Enter kaleidoscope change speed in milliseconds (~100ms is recommended): "))
+    frame_count = int(input("Enter the amount of frames for the gif. (30 yields in a perfect loop but takes up to "
+                            "1 minute to generate. 10 is recommended.): "))
 
     # Setting up the matplotlib figure
     fig = plt.figure(figsize=(15, 15))
     ax = fig.add_subplot(111)
     ax.axis("square")
 
-    animation = FuncAnimation(fig, update, frames=10, init_func=generate_kaleidoscope, blit=False,
+    animation = FuncAnimation(fig, update, frames=frame_count, init_func=generate_kaleidoscope, blit=False,
                               interval=change_speed)
 
     print("Starting calculations... Please don't end the program.")

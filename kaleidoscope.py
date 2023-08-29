@@ -1,5 +1,3 @@
-import sys
-
 from snowflake import koch_snowflake
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -105,8 +103,8 @@ def update(frame):
         # extract the line coordinates
         x, y = np.empty(len(snowflake) * 5), np.empty(len(snowflake) * 5)
         for b, line in enumerate(snowflake):
-            x[b * 5:b * 5 + 5] = [line['a'][0], line['b'][0], line['c'][0], line['d'][0], line['e'][0]]
-            y[b * 5:b * 5 + 5] = [line['a'][1], line['b'][1], line['c'][1], line['d'][1], line['e'][1]]
+            x[b * 5:b * 5 + 5] = [line['1'][0], line['2'][0], line['3'][0], line['4'][0], line['5'][0]]
+            y[b * 5:b * 5 + 5] = [line['1'][1], line['2'][1], line['3'][1], line['4'][1], line['5'][1]]
 
         if rotate:
             x, y = rotate_coordinates(x, y, 12 * frame)
@@ -132,7 +130,7 @@ if __name__ == "__main__":
     changing_colors = input("Should the kaleidoscope change colors? (yes/no): ").lower() == "yes"
     change_speed = float(input("Enter kaleidoscope change speed in milliseconds (~100ms is recommended): "))
     frame_count = int(input("Enter the amount of frames for the gif. (30 yields in a perfect loop but takes up to "
-                            "1 minute to generate. 10 is recommended.): "))
+                            "1 minute to generate. 10 is recommended): "))
 
     # Setting up the matplotlib figure
     fig = plt.figure(figsize=(15, 15))

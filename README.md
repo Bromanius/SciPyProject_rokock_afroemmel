@@ -26,6 +26,6 @@
   - Rotate: If the kaleidoscope should rotate or not.
   - Changing colors: If the kaleidoscope should change colors or not.
   - Change speed: How fast the kaleidoscope should change colors and rotate. (100 means that 1 frame lasts 100ms)
-  - Frame count = The amount of frames for the gif. 30 yields in a perfect loop but takes up to 1 minute to generate. 10 is recommended.
+  - Frame count: The amount of frames for the gif. 30 yields in a perfect loop but takes up to 1 minute to generate. 10 is recommended.
 
 ***Project for the SciPy-Course by rokock and afroemmel.***
